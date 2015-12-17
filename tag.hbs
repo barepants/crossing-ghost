@@ -1,0 +1,12 @@
+{{!< default}}
+
+<div class="archive-header">
+  <h1 class="archive-title">Posts in <b>{{tag.name}}</b></h1>
+  {{#if tag.description}}
+    <div class="archive-description">
+      {{tag.description}}
+    </div>
+  {{/if}}
+</div>
+
+{{> "loop"}}

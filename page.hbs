@@ -1,0 +1,17 @@
+{{!< default}}
+
+{{#post}}
+
+<article class="{{post_class}}">
+  <header class="post-header">
+    {{#if image}}
+      <div class="cover-image"><img src="{{image}}" alt="" /></div>
+    {{/if}}
+    <h1 class="post-title">{{{title}}}</h1>
+  </header>
+  <div class="post-content">
+    {{content}}
+  </div>
+</article>
+
+{{/post}}

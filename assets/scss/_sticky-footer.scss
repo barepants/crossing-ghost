@@ -1,0 +1,22 @@
+// http://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+main {
+  flex: 1 0 auto;
+  min-height: 1px; // IE10&11
+  width: 100%;
+}
+
+.site-footer,
+.site-header {
+  flex: none;
+}

@@ -1,0 +1,29 @@
+<div class="post-list">
+  {{#foreach posts}}
+    <article class="{{post_class}}">
+      <header class="post-header">
+        <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+      </header>
+      <div class="post-excerpt">
+        {{excerpt words="33"}}
+      </div>
+      <div class="post-footer">
+        <ul class="x-separated-list x-separated-list-meta x-separated-list-small">
+          {{#if featured}}
+            <li class="post-featured-label">Featured</li>
+          {{/if}}
+          <li class="post-byline">{{author}}</li>
+          <li class="post-date"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM D, YYYY"}}</time></li>
+        </ul>
+      </div>
+    </article>
+  {{/foreach}}
+</div>
+
+{{#if pagination.prev}}
+  {{pagination}}
+{{else}}
+  {{#if pagination.next}}
+    {{pagination}}
+  {{/if}}
+{{/if}}

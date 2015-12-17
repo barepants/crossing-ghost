@@ -1,0 +1,22 @@
+<nav class="pagination clearfix" role="navigation">
+  {{#if prev}}
+    <a class="pagination-newer" href="{{page_url prev}}">
+      <div>
+        <svg viewBox="0 0 9 14">
+          <path d="M7.293 14l1.414-1.414L3.12 7l5.587-5.586L7.293 0l-7 7 7 7z"/>
+        </svg>
+      </div>
+      Newer Posts
+    </a>
+  {{/if}}
+  {{#if next}}
+    <a class="pagination-older" href="{{page_url next}}">
+      <div>
+        <svg viewBox="0 0 9 14">
+          <path d="M1.707 14L.293 12.586 5.88 7 .292 1.414 1.707 0l7 7-7 7z"/>
+        </svg>
+      </div>
+      Older Posts
+    </a>
+  {{/if}}
+</nav>

@@ -1,0 +1,24 @@
+{{!< default}}
+
+{{#author}}
+<div class="author {{#if cover}}has-cover{{/if}}">
+  {{#if cover}}
+    <div class="cover-image"><img src="{{cover}}" alt="" /></div>
+  {{/if}}
+  {{#if image}}
+    <div class="author-avatar" style="background-image: url({{image}})"></div>
+  {{/if}}
+  <h1 class="author-name">{{name}}</h1>
+  <p class="author-bio">{{bio}}</p>
+  <ul class="x-separated-list x-separated-list-meta x-separated-list-small">
+    {{#if location}}
+      <li>{{location}}</li>
+    {{/if}}
+    {{#if website}}
+      <li><a href="{{website}}">{{website}}</a></li>
+    {{/if}}
+  </ul>
+</div>
+{{/author}}
+
+{{> "loop"}}

@@ -1,0 +1,47 @@
+.site-header {
+  position: relative;
+
+  &:after {
+    background-color: rgba(#000, .03);
+    content: "";
+    height: 3px;
+    left: 0;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+.site-title {
+  font-size: inherit;
+  margin: 0 34px 0 0;
+
+  @include breakpoint {
+    margin: 0;
+  }
+}
+
+.site-logo {
+  img {
+    max-height: 42px;
+    width: auto;
+
+    @include breakpoint {
+      max-height: 45px;
+    }
+  }
+}
+
+.site-description {
+  color: #aaa;
+  font-style: italic;
+
+  .site-logo + & {
+    margin-top: 7px;
+
+    @include breakpoint {
+      margin-top: 10px;
+    }
+  }
+}

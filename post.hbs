@@ -1,0 +1,86 @@
+{{!< default}}
+
+{{#post}}
+
+<article class="{{post_class}}">
+  <header class="post-header">
+    {{#if image}}
+      <div class="cover-image"><img src="{{image}}" alt="" /></div>
+    {{/if}}
+    <h1 class="post-title">{{{title}}}</h1>
+    <ul class="x-separated-list x-separated-list-meta">
+      <li class="post-byline">{{author}}</li>
+      <li class="post-date"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM D, YYYY"}}</time></li>
+      {{#if tags}}
+        <li class="post-tags">{{tags}}</li>
+      {{/if}}
+    </ul>
+  </header>
+  <div class="post-content">
+    {{content}}
+  </div>
+  <div class="share">
+    <span class="share-title">Share this on:</span>
+    <ul class="x-separated-list">
+      <li>
+        <a href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"
+          onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">Twitter</a>
+      </li>
+      <li>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+          onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">Facebook</a>
+      </li>
+      <li>
+        <a href="https://plus.google.com/share?url={{url absolute="true"}}"
+          onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">Google+</a>
+      </li>
+    </ul>
+  </div>
+</article>
+
+{{#author}}
+  <div class="post-author {{#if image}}has-avatar{{/if}}">
+    {{#if image}}
+      <a href="{{url}}" class="post-author-avatar" aria-hidden="true" style="background-image: url({{image}})"></a>
+    {{/if}}
+    <a class="post-author-name" href="{{url}}">{{name}}</a>
+    <div class="post-author-bio">
+      {{#if bio}}
+        {{bio}}
+      {{else}}
+        Read <a href="{{url}}">more posts</a> by this author.
+      {{/if}}
+    </div>
+  </div>
+{{/author}}
+
+<div id="disqus_thread"></div>
+<script>
+  if (Crossing.config.disqus_shortname) {
+    var disqus_shortname = Crossing.config.disqus_shortname;
+    var disqus_identifier = '{{url absolute="true"}}';
+    var disqus_url = '{{url absolute="true"}}';
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  }
+</script>
+
+<nav class="read-next">
+  {{#next_post}}
+    <a class="read-next-newer" href="{{url}}">
+      <span class="read-next-label">Newer Post</span>
+      <span class="read-next-title">{{title}}</span>
+    </a>
+  {{/next_post}}
+  {{#prev_post}}
+    <a class="read-next-older" href="{{url}}">
+      <span class="read-next-label">Older Post</span>
+      <span class="read-next-title">{{title}}</span>
+    </a>
+  {{/prev_post}}
+</nav>
+
+{{/post}}

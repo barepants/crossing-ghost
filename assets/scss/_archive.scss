@@ -1,0 +1,30 @@
+.archive-header {
+  margin: 0 0 28px;
+
+  @include breakpoint {
+    margin-bottom: 60px;
+  }
+}
+
+.archive-title {
+  color: #777;
+  font-size: 30px;
+  line-height: 35px;
+  margin: 0 0 7px;
+
+  @include breakpoint {
+    font-size: 40px;
+    line-height: 45px;
+    margin-bottom: 5px;
+  }
+
+  b {
+    color: #333;
+    display: inline-block;
+  }
+}
+
+.archive-description {
+  color: #aaa;
+  font-style: italic;
+}

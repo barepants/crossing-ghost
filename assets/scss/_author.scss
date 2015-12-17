@@ -1,0 +1,58 @@
+.author {
+  margin: 0 0 28px;
+  text-align: center;
+
+  @include breakpoint {
+    margin-bottom: 60px;
+    text-align: left;
+  }
+
+  .x-separated-list {
+    word-break: break-word;
+    word-wrap: break-word;
+  }
+}
+
+.author-avatar {
+  background-color: #fff;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px #fbfbfb;
+  height: 112px;
+  margin: 0 auto 7px;
+  position: relative;
+  width: 112px;
+
+  @include breakpoint {
+    height: 120px;
+    margin: 0 0 15px;
+    width: 120px;
+  }
+
+  .author.has-cover & {
+    margin-top: -84px;
+
+    @include breakpoint {
+      margin-top: -105px;
+    }
+  }
+}
+
+.author-name {
+  font-size: 35px;
+  line-height: 40px;
+  margin: 0 0 7px;
+
+  @include breakpoint {
+    font-size: 40px;
+    line-height: 45px;
+    margin-bottom: 5px;
+  }
+}
+
+.author-bio {
+  color: #aaa;
+  font-style: italic;
+  margin: 0;
+}
