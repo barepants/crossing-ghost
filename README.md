@@ -2,6 +2,8 @@
 
 A Ghost theme.
 
+![Screenshot](screenshot.png?raw=true)
+
 [Demo](http://crossing-ghost.barepants.com/) × [Download](https://github.com/barepants/crossing-ghost/archive/master.zip)
 
 
